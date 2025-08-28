@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     # permissions:
     #   contents: write
@@ -49,14 +49,22 @@ jobs:
           using NodeJS; run(`$(npm_cmd()) install highlight.js`);
           using Franklin;
           lunr();
-          optimize(minify=false)'
-      - name: Deploy
-        uses: actions/configure-pages@v5
+          serve(single=true);
+          optimize(minify=false)' && ls -a
+      - name: Configure
+        uses: actions/configure-pages@v4
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           # Upload entire repository
-          path: "__site"
+          path: "__site/"
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v3
