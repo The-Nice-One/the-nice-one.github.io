@@ -1,0 +1,111 @@
+<script>
+    var primaryColor = [64, 151, 234, 255];
+    var secondaryColor = [20, 118, 192, 255];
+
+    function pixel_process(pixel) {
+        if (
+            pixel[3] == 255 &&
+            pixel[0] > 245 &&
+            pixel[1] > 245 &&
+            pixel[2] > 245
+        ) {
+            pixel = primaryColor;
+        } else if (pixel[3] == 255) {
+            pixel = secondaryColor;
+        }
+        return pixel;
+    }
+
+    let isHome = false;
+    const subNav = document.getElementsByClassName("sub-nav")[0];
+    let spfTexts = document.getElementsByClassName("spf-process-blue");
+    for (let i = 0; i < spfTexts.length; i++) {
+        spfTexts[i].ondraw = pixel_process;
+
+        let ahref = document.createElement("a");
+        ahref.href = spfTexts[i].parentElement.href;
+        ahref.style.textDecoration = "none";
+
+        let button = document.createElement("button");
+        button.innerText = spfTexts[i].innerText;
+        if (i == spfTexts.length - 1) {
+            button.classList.add("border-right");
+        } else {
+            button.classList.add("border-bottom");
+        }
+        button.classList.add("sub-nav-button");
+
+        ahref.appendChild(button);
+        subNav.appendChild(ahref);
+        if (spfTexts[i].innerText == "About Me") {
+            isHome = true;
+        }
+    }
+
+    let anchorIcons = document.getElementsByClassName("anchor-icon");
+    for (let i = 0; i < anchorIcons.length; i++) {
+        const icon = anchorIcons[i];
+        icon.addEventListener("click", function () {
+            this.classList.toggle("clicked");
+        });
+    }
+
+    const pathname = window.location.pathname;
+    const navigationBar = document.getElementById("navigation-bar");
+
+    const navHomeItem = document.getElementById("nav-home-item");
+    const navPlaygroundItem = document.getElementById("nav-playground-item");
+    const navGalleryItem = document.getElementById("nav-gallery-item");
+    const navArrowItem = document.getElementById("nav-arrow-item");
+
+    const homeButton = document.getElementById("home-button");
+    const playgroundButton = document.getElementById("playground-button");
+    const galleryButton = document.getElementById("gallery-button");
+    if (pathname.startsWith("/playground")) {
+        navPlaygroundItem.after(navArrowItem);
+        playgroundButton.classList.remove("border-left");
+    } else if (pathname.startsWith("/gallery")) {
+        navGalleryItem.after(navArrowItem);
+        playgroundButton.classList.remove("border-left");
+        galleryButton.classList.remove("border-left");
+        galleryButton.classList.remove("border-right");
+    } else if (!isHome) {
+        navArrowItem.remove();
+        playgroundButton.classList.remove("border-left");
+        galleryButton.classList.remove("border-left");
+    }
+
+    function toggleSubNav(button) {
+        const arrow = document.getElementsByClassName("arrow")[0];
+        const navItem = button.parentElement;
+        const nav = navItem.parentElement;
+        const isExpanded = navItem.classList.contains("expanded");
+
+        navItem.classList.toggle("expanded");
+        button.classList.toggle("border-right");
+
+        if (arrow.textContent == ">") {
+            arrow.textContent = "<";
+        } else {
+            arrow.textContent = ">";
+        }
+    }
+</script>
+<img id="footer-design" src="/assets/city_background_clean.png" />
+<style>
+    #footer-design {
+        padding: 0;
+        width: 100%;
+        bottom: 0;
+        opacity: 0.18;
+        margin-top: 6em;
+    }
+</style>
+<div class="page-foot">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> {{
+    fill author }}. {{isnotpage /tag/*}}Last modified: {{ fill fd_mtime
+    }}.{{end}} Website built with
+    <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the
+    <a href="https://julialang.org">Julia programming language</a>. See
+    <a href="/credits">credits.</a>
+</div>

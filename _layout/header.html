@@ -1,0 +1,69 @@
+<header>
+    <div class="aligned-flex">
+        <div class="name-tag">
+            <img
+                src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/avatar/midnight.png"
+                class="avatar"
+            />
+            <p>The-Nice-One</p>
+        </div>
+        <div class="aligned-item-right">
+            <form id="lunrSearchForm" name="lunrSearchForm">
+                <input
+                    class="search-input"
+                    name="q"
+                    placeholder="Enter search term"
+                    type="text"
+                />
+                <input
+                    style="border: none"
+                    class="search-button"
+                    type="submit"
+                    value="Search"
+                    formaction="/search/index.html"
+                />
+            </form>
+        </div>
+    </div>
+    <nav class="simple-flex" id="navigation-bar">
+        <div class="nav-item" id="nav-home-item">
+            <a
+                href="/"
+                class="nav-button border-bottom border-left"
+                id="home-button"
+                >Home</a
+            >
+        </div>
+
+        <div class="nav-item" id="nav-arrow-item">
+            <button
+                class="nav-button border-bottom border-right"
+                style="padding-left: 0px"
+                onclick="toggleSubNav(this)"
+            >
+                <span class="arrow">&gt;</span>
+            </button>
+            <div class="sub-nav">
+                <!-- gets filled in by page_foot.html -->
+            </div>
+        </div>
+
+        <div class="nav-item" id="nav-playground-item">
+            <a
+                href="/playground"
+                class="nav-button border-bottom border-left"
+                id="playground-button"
+            >
+                Playground
+            </a>
+        </div>
+        <div class="nav-item" id="nav-gallery-item">
+            <a
+                href="/gallery"
+                class="nav-button border-bottom border-right"
+                id="gallery-button"
+                >Gallery</a
+            >
+        </div>
+    </nav>
+</header>
