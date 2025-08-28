@@ -44,7 +44,7 @@ jobs:
           using Pkg; Pkg.activate("."); Pkg.instantiate();
           using NodeJS; run(`$(npm_cmd()) install highlight.js`);
           using Franklin;
-          optimize(minify=false); lunr();' && ls -a && tree __site/ -a -L 3
+          optimize(minify=false); lunr();'
       - name: Configure
         uses: actions/configure-pages@v5
       - name: Upload artifact
