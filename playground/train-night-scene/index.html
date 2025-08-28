@@ -1,5 +1,123 @@
-<!doctype html> <html lang=en > <meta charset=UTF-8  /> <meta name=viewport  content="width=device-width, initial-scale=1" /> <link rel=stylesheet  href="/libs/highlight/styles/github.min.css"> <link rel=stylesheet  href="/css/franklin.css" /> <link rel=stylesheet  href="/css/accela.css" /> <link rel=icon  href="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/avatar/midnight.png" /> <script src="/libs/lunr/lunr.min.js"></script> <script src="/libs/lunr/lunr_index.js"></script> <script src="/libs/lunr/lunrclient.min.js"></script> <script src="/libs/web-spf/web_spf.js" type=module ></script> <spf-font src="/assets/fonts/Peaberry.spf" default></spf-font> <title>Train Night Scene</title> <header> <div class=aligned-flex > <div class=name-tag > <img src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/avatar/midnight.png" class=avatar  /> <p>The-Nice-One</p> </div> <div class=aligned-item-right > <form id=lunrSearchForm  name=lunrSearchForm > <input class=search-input  name=q  placeholder="Enter search term" type=text  /> <input style="border: none" class=search-button  type=submit  value=Search  formaction="/search/index.html" /> </form> </div> </div> <nav class=simple-flex  id=navigation-bar > <div class=nav-item  id=nav-home-item > <a href="/" class="nav-button border-bottom border-left" id=home-button  >Home</a > </div> <div class=nav-item  id=nav-arrow-item > <button class="nav-button border-bottom border-right" style="padding-left: 0px" onclick="toggleSubNav(this)" > <span class=arrow >&gt;</span> </button> <div class=sub-nav > </div> </div> <div class=nav-item  id=nav-playground-item > <a href="/playground" class="nav-button border-bottom border-left" id=playground-button  > Playground </a> </div> <div class=nav-item  id=nav-gallery-item > <a href="/gallery" class="nav-button border-bottom border-right" id=gallery-button  >Gallery</a > </div> </nav> </header> <div class=franklin-content > <a id=train-night-scene  class=anchor ></a> <div class=banner ><a href="#train-night-scene"><img class=anchor-icon  style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class=spf-process-blue >Train Night Scene</spf-text></a></div> A static procedural animation written in Julia using <a href="https://github.com/JuliaGraphics/Luxor.jl">Luxor.jl</a>.</p> <p><a id=motive  class=anchor ></a> <div class=banner ><a href="#motive"><img class=anchor-icon  style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class=spf-process-blue >Motive</spf-text></a></div> This project spurred from the curiosity of exploring procedural digit graphics. Previously, I had used <a href="https://academy.cs.cmu.edu/desktop">CMU graphics</a> to create 2D vector graphics. However, I wanted to explore a more sophisticated and focued tool for the task, in this case Luxor.jl.</p> <a id=features  class=anchor ></a> <div class=banner ><a href="#features"><img class=anchor-icon  style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class=spf-process-blue >Features</spf-text></a></div> <ul> <li><p>Uses my custom animation package; <a href="https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Libraries/SimpleFrameAnimation">SimpleFrameAnimation.jl</a></p> <li><p>Multiple animated sprites with different animation speeds and movement directions.</p> <li><p>Creates a animated <code>.gif</code> file.</p> </ul> <p><a id=artifacts  class=anchor ></a> <div class=banner ><a href="#artifacts"><img class=anchor-icon  style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class=spf-process-blue >Artifacts</spf-text></a></div> Whilst this project can be ran with Julia, the focus is on its artifacts. The following is the animated gif created by this project which was enlarged using <a href="https://github.com/kohler/gifsicle">Gifsicle</a>.</p> <p><img src="https://raw.githubusercontent.com/The-Nice-One/PlaygroundProjects/refs/heads/main/Miscellaneous/TrainNightScene/TrainNightScenePreview.gif" alt=previewTrainNightScene  /></p> <p><a id=usage  class=anchor ></a> <div class=banner ><a href="#usage"><img class=anchor-icon  style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class=spf-process-blue >Usage</spf-text></a></div> This project contains a Julia project which can be ran given the following prerequisites are installed:</p> <ul> <li><p><a href="https://julialang.org/install/">Julia</a></p> </ul> <p>Once you have installed Julia, you can <code>cd</code> into the project directory and run the <a href="https://github.com/The-Nice-One/PlaygroundProjects/blob/main/Miscellaneous/TrainNightScene/src/main.jl">src/main.jl</a> file.</p> <pre><code class="bash hljs">julia src/main.jl</code></pre>
-<p><a id=license  class=anchor ></a> <div class=banner ><a href="#license"><img class=anchor-icon  style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class=spf-process-blue >License</spf-text></a></div> As with all other projects in this playground, the license is CC BY-NC.
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+         
+        <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
+ 
+        <link rel="stylesheet" href="/css/franklin.css" />
+        <link rel="stylesheet" href="/css/accela.css" />
+        <link
+            rel="icon"
+            href="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/avatar/midnight.png"
+        />
+        <script src="/libs/lunr/lunr.min.js"></script>
+        <script src="/libs/lunr/lunr_index.js"></script>
+        <script src="/libs/lunr/lunrclient.min.js"></script>
+        <script src="/libs/web-spf/web_spf.js" type="module"></script>
+        <spf-font src="/assets/fonts/Peaberry.spf" default></spf-font>
+        
+        <title>Train Night Scene</title>
+        
+    </head>
+    <body>
+        <header>
+    <div class="aligned-flex">
+        <div class="name-tag">
+            <img
+                src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/avatar/midnight.png"
+                class="avatar"
+            />
+            <p>The-Nice-One</p>
+        </div>
+        <div class="aligned-item-right">
+            <form id="lunrSearchForm" name="lunrSearchForm">
+                <input
+                    class="search-input"
+                    name="q"
+                    placeholder="Enter search term"
+                    type="text"
+                />
+                <input
+                    style="border: none"
+                    class="search-button"
+                    type="submit"
+                    value="Search"
+                    formaction="/search/index.html"
+                />
+            </form>
+        </div>
+    </div>
+    <nav class="simple-flex" id="navigation-bar">
+        <div class="nav-item" id="nav-home-item">
+            <a
+                href="/"
+                class="nav-button border-bottom border-left"
+                id="home-button"
+                >Home</a
+            >
+        </div>
+
+        <div class="nav-item" id="nav-arrow-item">
+            <button
+                class="nav-button border-bottom border-right"
+                style="padding-left: 0px"
+                onclick="toggleSubNav(this)"
+            >
+                <span class="arrow">&gt;</span>
+            </button>
+            <div class="sub-nav">
+                <!-- gets filled in by page_foot.html -->
+            </div>
+        </div>
+
+        <div class="nav-item" id="nav-playground-item">
+            <a
+                href="/playground"
+                class="nav-button border-bottom border-left"
+                id="playground-button"
+            >
+                Playground
+            </a>
+        </div>
+        <div class="nav-item" id="nav-gallery-item">
+            <a
+                href="/gallery"
+                class="nav-button border-bottom border-right"
+                id="gallery-button"
+                >Gallery</a
+            >
+        </div>
+    </nav>
+</header>
+
+
+        <!-- Content appended here -->
+    </body>
+</html>
+<div class="franklin-content">
+<a id="train-night-scene" class="anchor"></a> <div class="banner"><a href="#train-night-scene"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">Train Night Scene</spf-text></a></div> A static procedural animation written in Julia using <a href="https://github.com/JuliaGraphics/Luxor.jl">Luxor.jl</a>.</p>
+<p><a id="motive" class="anchor"></a> <div class="banner"><a href="#motive"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">Motive</spf-text></a></div> This project spurred from the curiosity of exploring procedural digit graphics. Previously, I had used <a href="https://academy.cs.cmu.edu/desktop">CMU graphics</a> to create 2D vector graphics. However, I wanted to explore a more sophisticated and focued tool for the task, in this case Luxor.jl.</p>
+<a id="features" class="anchor"></a> <div class="banner"><a href="#features"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">Features</spf-text></a></div>
+<ul>
+<li><p>Uses my custom animation package; <a href="https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Libraries/SimpleFrameAnimation">SimpleFrameAnimation.jl</a></p>
+</li>
+<li><p>Multiple animated sprites with different animation speeds and movement directions.</p>
+</li>
+<li><p>Creates a animated <code>.gif</code> file.</p>
+</li>
+</ul>
+<p><a id="artifacts" class="anchor"></a> <div class="banner"><a href="#artifacts"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">Artifacts</spf-text></a></div> Whilst this project can be ran with Julia, the focus is on its artifacts. The following is the animated gif created by this project which was enlarged using <a href="https://github.com/kohler/gifsicle">Gifsicle</a>.</p>
+<p><img src="https://raw.githubusercontent.com/The-Nice-One/PlaygroundProjects/refs/heads/main/Miscellaneous/TrainNightScene/TrainNightScenePreview.gif" alt="previewTrainNightScene" /></p>
+<p><a id="usage" class="anchor"></a> <div class="banner"><a href="#usage"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">Usage</spf-text></a></div> This project contains a Julia project which can be ran given the following prerequisites are installed:</p>
+<ul>
+<li><p><a href="https://julialang.org/install/">Julia</a></p>
+</li>
+</ul>
+<p>Once you have installed Julia, you can <code>cd</code> into the project directory and run the <a href="https://github.com/The-Nice-One/PlaygroundProjects/blob/main/Miscellaneous/TrainNightScene/src/main.jl">src/main.jl</a> file.</p>
+<pre><code class="bash hljs">julia src/main.jl</code></pre>
+<p><a id="license" class="anchor"></a> <div class="banner"><a href="#license"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">License</spf-text></a></div> As with all other projects in this playground, the license is CC BY-NC.
 <script>
     var primaryColor = [64, 151, 234, 255];
     var secondaryColor = [20, 118, 192, 255];
@@ -93,7 +211,7 @@
         }
     }
 </script>
-<img id=footer-design  src="/assets/city_background_clean.png" />
+<img id="footer-design" src="/assets/city_background_clean.png" />
 <style>
     #footer-design {
         padding: 0;
@@ -103,14 +221,18 @@
         margin-top: 6em;
     }
 </style>
-<div class=page-foot >
+<div class="page-foot">
     <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> The-Nice-One. Last modified: August 28, 2025. Website built with
     <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the
     <a href="https://julialang.org">Julia programming language</a>. See
     <a href="/credits">credits.</a>
 </div>
-</div>
+</div><!-- CONTENT ENDS HERE -->
     
     
         <script src="/libs/highlight/highlight.min.js"></script>
 <script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
+
+    
+  </body>
+</html>

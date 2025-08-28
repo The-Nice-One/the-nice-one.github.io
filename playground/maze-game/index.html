@@ -1,6 +1,123 @@
-<!doctype html> <html lang=en > <meta charset=UTF-8  /> <meta name=viewport  content="width=device-width, initial-scale=1" /> <link rel=stylesheet  href="/libs/highlight/styles/github.min.css"> <link rel=stylesheet  href="/css/franklin.css" /> <link rel=stylesheet  href="/css/accela.css" /> <link rel=icon  href="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/avatar/midnight.png" /> <script src="/libs/lunr/lunr.min.js"></script> <script src="/libs/lunr/lunr_index.js"></script> <script src="/libs/lunr/lunrclient.min.js"></script> <script src="/libs/web-spf/web_spf.js" type=module ></script> <spf-font src="/assets/fonts/Peaberry.spf" default></spf-font> <title>Maze Game</title> <header> <div class=aligned-flex > <div class=name-tag > <img src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/avatar/midnight.png" class=avatar  /> <p>The-Nice-One</p> </div> <div class=aligned-item-right > <form id=lunrSearchForm  name=lunrSearchForm > <input class=search-input  name=q  placeholder="Enter search term" type=text  /> <input style="border: none" class=search-button  type=submit  value=Search  formaction="/search/index.html" /> </form> </div> </div> <nav class=simple-flex  id=navigation-bar > <div class=nav-item  id=nav-home-item > <a href="/" class="nav-button border-bottom border-left" id=home-button  >Home</a > </div> <div class=nav-item  id=nav-arrow-item > <button class="nav-button border-bottom border-right" style="padding-left: 0px" onclick="toggleSubNav(this)" > <span class=arrow >&gt;</span> </button> <div class=sub-nav > </div> </div> <div class=nav-item  id=nav-playground-item > <a href="/playground" class="nav-button border-bottom border-left" id=playground-button  > Playground </a> </div> <div class=nav-item  id=nav-gallery-item > <a href="/gallery" class="nav-button border-bottom border-right" id=gallery-button  >Gallery</a > </div> </nav> </header> <div class=franklin-content > <a id=maze-game  class=anchor ></a> <div class=banner ><a href="#maze-game"><img class=anchor-icon  style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class=spf-process-blue >Maze Game</spf-text></a></div> A maze game with multiple control methods created in the Godot game engine.</p> <p><a id=motive  class=anchor ></a> <div class=banner ><a href="#motive"><img class=anchor-icon  style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class=spf-process-blue >Motive</spf-text></a></div> This game was created during my Game Programming class in 10th grade of high school. The objective was to simply create a maze game, and we had full creative liberty. I created multiple control modes, on-screen effects with particles and various lights, and a timer for a simple scoring system.</p> <a id=features  class=anchor ></a> <div class=banner ><a href="#features"><img class=anchor-icon  style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class=spf-process-blue >Features</spf-text></a></div> <ul> <li><p>Multiple control methods for mobile and desktop &#40;joystick, directional buttons, keyboard&#41;.</p> <li><p>Multiple lighting effects &#40;using Light2D and AnimationPlayer nodes&#41;.</p> <li><p>Simple UI for choosing control method, displaying sprint energy, and timer.</p> </ul> <p><a id=preview  class=anchor ></a> <div class=banner ><a href="#preview"><img class=anchor-icon  style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class=spf-process-blue >Preview</spf-text></a></div> <img src="https://raw.githubusercontent.com/The-Nice-One/PlaygroundProjects/refs/heads/main/Games/MazeGame/MazeGamePreview.png" alt=previewMazeGame  /></p> <p><a id=usage  class=anchor ></a> <div class=banner ><a href="#usage"><img class=anchor-icon  style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class=spf-process-blue >Usage</spf-text></a></div> This project holds a fully contained Godot project. To run it, you will need the following:</p> <ul> <li><p><a href="https://godotengine.org/download/3.x/">Godot 3.x</a></p> </ul> <p>Once you have Godot installed, change your present working directory to the project&#39;s root directory and run the following commands to execute the <a href="scenes/Main.tscn">scenes/Main.tscn</a> file:</p> <pre><code class="bash hljs">godot</code></pre>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+         
+        <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
+ 
+        <link rel="stylesheet" href="/css/franklin.css" />
+        <link rel="stylesheet" href="/css/accela.css" />
+        <link
+            rel="icon"
+            href="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/avatar/midnight.png"
+        />
+        <script src="/libs/lunr/lunr.min.js"></script>
+        <script src="/libs/lunr/lunr_index.js"></script>
+        <script src="/libs/lunr/lunrclient.min.js"></script>
+        <script src="/libs/web-spf/web_spf.js" type="module"></script>
+        <spf-font src="/assets/fonts/Peaberry.spf" default></spf-font>
+        
+        <title>Maze Game</title>
+        
+    </head>
+    <body>
+        <header>
+    <div class="aligned-flex">
+        <div class="name-tag">
+            <img
+                src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/avatar/midnight.png"
+                class="avatar"
+            />
+            <p>The-Nice-One</p>
+        </div>
+        <div class="aligned-item-right">
+            <form id="lunrSearchForm" name="lunrSearchForm">
+                <input
+                    class="search-input"
+                    name="q"
+                    placeholder="Enter search term"
+                    type="text"
+                />
+                <input
+                    style="border: none"
+                    class="search-button"
+                    type="submit"
+                    value="Search"
+                    formaction="/search/index.html"
+                />
+            </form>
+        </div>
+    </div>
+    <nav class="simple-flex" id="navigation-bar">
+        <div class="nav-item" id="nav-home-item">
+            <a
+                href="/"
+                class="nav-button border-bottom border-left"
+                id="home-button"
+                >Home</a
+            >
+        </div>
+
+        <div class="nav-item" id="nav-arrow-item">
+            <button
+                class="nav-button border-bottom border-right"
+                style="padding-left: 0px"
+                onclick="toggleSubNav(this)"
+            >
+                <span class="arrow">&gt;</span>
+            </button>
+            <div class="sub-nav">
+                <!-- gets filled in by page_foot.html -->
+            </div>
+        </div>
+
+        <div class="nav-item" id="nav-playground-item">
+            <a
+                href="/playground"
+                class="nav-button border-bottom border-left"
+                id="playground-button"
+            >
+                Playground
+            </a>
+        </div>
+        <div class="nav-item" id="nav-gallery-item">
+            <a
+                href="/gallery"
+                class="nav-button border-bottom border-right"
+                id="gallery-button"
+                >Gallery</a
+            >
+        </div>
+    </nav>
+</header>
+
+
+        <!-- Content appended here -->
+    </body>
+</html>
+<div class="franklin-content">
+<a id="maze-game" class="anchor"></a> <div class="banner"><a href="#maze-game"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">Maze Game</spf-text></a></div> A maze game with multiple control methods created in the Godot game engine.</p>
+<p><a id="motive" class="anchor"></a> <div class="banner"><a href="#motive"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">Motive</spf-text></a></div> This game was created during my Game Programming class in 10th grade of high school. The objective was to simply create a maze game, and we had full creative liberty. I created multiple control modes, on-screen effects with particles and various lights, and a timer for a simple scoring system.</p>
+<a id="features" class="anchor"></a> <div class="banner"><a href="#features"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">Features</spf-text></a></div>
+<ul>
+<li><p>Multiple control methods for mobile and desktop &#40;joystick, directional buttons, keyboard&#41;.</p>
+</li>
+<li><p>Multiple lighting effects &#40;using Light2D and AnimationPlayer nodes&#41;.</p>
+</li>
+<li><p>Simple UI for choosing control method, displaying sprint energy, and timer.</p>
+</li>
+</ul>
+<p><a id="preview" class="anchor"></a> <div class="banner"><a href="#preview"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">Preview</spf-text></a></div> <img src="https://raw.githubusercontent.com/The-Nice-One/PlaygroundProjects/refs/heads/main/Games/MazeGame/MazeGamePreview.png" alt="previewMazeGame" /></p>
+<p><a id="usage" class="anchor"></a> <div class="banner"><a href="#usage"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">Usage</spf-text></a></div> This project holds a fully contained Godot project. To run it, you will need the following:</p>
+<ul>
+<li><p><a href="https://godotengine.org/download/3.x/">Godot 3.x</a></p>
+</li>
+</ul>
+<p>Once you have Godot installed, change your present working directory to the project&#39;s root directory and run the following commands to execute the <a href="scenes/Main.tscn">scenes/Main.tscn</a> file:</p>
+<pre><code class="bash hljs">godot</code></pre>
 <p>You may also open the Godot editor and import the project via the zip file or its <a href="https://github.com/The-Nice-One/PlaygroundProjects/blob/main/Games/MazeGame/project.godot">project.godot</a> file.</p>
-<p><a id=license  class=anchor ></a> <div class=banner ><a href="#license"><img class=anchor-icon  style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class=spf-process-blue >License</spf-text></a></div> As with all other projects in this playground, the license is CC BY-NC.
+<p><a id="license" class="anchor"></a> <div class="banner"><a href="#license"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">License</spf-text></a></div> As with all other projects in this playground, the license is CC BY-NC.
 <script>
     var primaryColor = [64, 151, 234, 255];
     var secondaryColor = [20, 118, 192, 255];
@@ -94,7 +211,7 @@
         }
     }
 </script>
-<img id=footer-design  src="/assets/city_background_clean.png" />
+<img id="footer-design" src="/assets/city_background_clean.png" />
 <style>
     #footer-design {
         padding: 0;
@@ -104,14 +221,18 @@
         margin-top: 6em;
     }
 </style>
-<div class=page-foot >
+<div class="page-foot">
     <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> The-Nice-One. Last modified: August 28, 2025. Website built with
     <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the
     <a href="https://julialang.org">Julia programming language</a>. See
     <a href="/credits">credits.</a>
 </div>
-</div>
+</div><!-- CONTENT ENDS HERE -->
     
     
         <script src="/libs/highlight/highlight.min.js"></script>
 <script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
+
+    
+  </body>
+</html>
