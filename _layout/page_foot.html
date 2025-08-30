@@ -64,6 +64,7 @@
     if (pathname.startsWith("/playground")) {
         navPlaygroundItem.after(navArrowItem);
         playgroundButton.classList.remove("border-left");
+        galleryButton.classList.add("border-left");
     } else if (pathname.startsWith("/gallery")) {
         navGalleryItem.after(navArrowItem);
         playgroundButton.classList.remove("border-left");

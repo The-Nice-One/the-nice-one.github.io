@@ -1,5 +1,6 @@
 +++
 title = "Gallery"
+tags = ["gallery", "artwork"]
 +++
 
 \header{Gallery}{gallery}

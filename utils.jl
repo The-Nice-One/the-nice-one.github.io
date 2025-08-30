@@ -40,6 +40,7 @@ function replace_header(string)
     header_text = result.captures[2]
     anchor_text = lowercase(header_text)
     anchor_text = replace(anchor_text, " " => "-")
+    anchor_text = replace(anchor_text, "." => "")
     anchor_text = replace(anchor_text, "," => "")
     anchor_text = replace(anchor_text, "?" => "")
 

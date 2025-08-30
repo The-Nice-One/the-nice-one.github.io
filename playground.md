@@ -1,5 +1,6 @@
 +++
 title = "Playground"
+tags = ["playground", "projects", "programming"]
 +++
 
 \header{Plaground Projects}{playground-projects}
