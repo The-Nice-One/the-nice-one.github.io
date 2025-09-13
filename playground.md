@@ -51,3 +51,7 @@ A simulation of a physical safe-box built during my High School 10th grade, usin
 
 **\emoji{julia} Train Night Scene:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Miscellaneous/TrainNightScene)\
 A static procedural animation written in Julia using [Luxor.jl](https://github.com/JuliaGraphics/Luxor.jl). [Read more.](/playground/train-night-scene/index.html)
+
+\header{Websites}{websites}
+**\emoji{html5} Polynomial Long Division Lesson:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Websites/PreCalculusResource)\
+An interactive resource website for learning polynomial long division via notes and questions. [Read more.](/playground/pre-calculus-resource/index.html)
