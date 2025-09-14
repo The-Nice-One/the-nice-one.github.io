@@ -43,6 +43,8 @@ function replace_header(string)
     anchor_text = replace(anchor_text, "." => "")
     anchor_text = replace(anchor_text, "," => "")
     anchor_text = replace(anchor_text, "?" => "")
+    anchor_text = replace(anchor_text, "'" => "")
+    anchor_text = replace(anchor_text, "&" => "")
 
     return "\\header{$header_text}{$anchor_text}"
 end

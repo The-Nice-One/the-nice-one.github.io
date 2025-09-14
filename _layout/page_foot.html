@@ -56,11 +56,13 @@
     const navHomeItem = document.getElementById("nav-home-item");
     const navPlaygroundItem = document.getElementById("nav-playground-item");
     const navGalleryItem = document.getElementById("nav-gallery-item");
+    const navStationItem = document.getElementById("nav-station-item");
     const navArrowItem = document.getElementById("nav-arrow-item");
 
     const homeButton = document.getElementById("home-button");
     const playgroundButton = document.getElementById("playground-button");
     const galleryButton = document.getElementById("gallery-button");
+    const stationButton = document.getElementById("station-button");
     if (pathname.startsWith("/playground")) {
         navPlaygroundItem.after(navArrowItem);
         playgroundButton.classList.remove("border-left");
@@ -70,6 +72,11 @@
         playgroundButton.classList.remove("border-left");
         galleryButton.classList.remove("border-left");
         galleryButton.classList.remove("border-right");
+    } else if (pathname.startsWith("/station")) {
+        navStationItem.after(navArrowItem);
+        playgroundButton.classList.remove("border-left");
+        galleryButton.classList.remove("border-left");
+        stationButton.classList.remove("border-right");
     } else if (!isHome) {
         navArrowItem.remove();
         playgroundButton.classList.remove("border-left");
