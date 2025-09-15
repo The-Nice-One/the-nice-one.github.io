@@ -78,30 +78,27 @@ function replace_hard_coded(string)
 end
 
 function process_markdown(string)
-    segments = []
-    last_pos = 1
+    code_blocks = []
+    templated_markdown = string
+
+    counter = 1
     for m in eachmatch(CODE_BLOCK_PATTERN, string)
-        if m.offset > last_pos
-            push!(segments, (:text, string[last_pos:m.offset-1]))
-        end
-        push!(segments, (:code, m.match))
-        last_pos = m.offset + length(m.match)
-    end
-    if last_pos < length(string)
-        push!(segments, (:text, string[last_pos:end]))
+        placeholder = "{{codeblock$counter}}"
+        push!(code_blocks, (placeholder, m.match))
+        templated_markdown = replace(templated_markdown, m.match => placeholder)
+        counter += 1
     end
 
-    processed_segments = []
-    for (type, segment) in segments
-        if type == :text
-            segment = replace_hard_coded(segment)
-            segment = replace(segment, IMAGE_PATTERN => replace_image)
-            segment = replace(segment, HEADER_PATTERN => replace_header)
-        end
-        push!(processed_segments, segment)
+    templated_markdown = replace_hard_coded(templated_markdown)
+    templated_markdown = replace(templated_markdown, IMAGE_PATTERN => replace_image)
+    templated_markdown = replace(templated_markdown, HEADER_PATTERN => replace_header)
+
+    markdown = templated_markdown
+    for (placeholder, code_block) in code_blocks
+        markdown = replace(markdown, placeholder => code_block)
     end
 
-    return join(processed_segments, "")
+    return markdown
 end
 
 function lx_fetch(com, _)
