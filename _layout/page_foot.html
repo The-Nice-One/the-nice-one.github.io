@@ -56,13 +56,13 @@
     const navHomeItem = document.getElementById("nav-home-item");
     const navPlaygroundItem = document.getElementById("nav-playground-item");
     const navGalleryItem = document.getElementById("nav-gallery-item");
-    const navStationItem = document.getElementById("nav-station-item");
+    const navBlogItem = document.getElementById("nav-blog-item");
     const navArrowItem = document.getElementById("nav-arrow-item");
 
     const homeButton = document.getElementById("home-button");
     const playgroundButton = document.getElementById("playground-button");
     const galleryButton = document.getElementById("gallery-button");
-    const stationButton = document.getElementById("station-button");
+    const blogButton = document.getElementById("blog-button");
     if (pathname.startsWith("/playground")) {
         navPlaygroundItem.after(navArrowItem);
         playgroundButton.classList.remove("border-left");
@@ -71,12 +71,12 @@
         navGalleryItem.after(navArrowItem);
         playgroundButton.classList.remove("border-left");
         galleryButton.classList.remove("border-left");
-        galleryButton.classList.remove("border-right");
-    } else if (pathname.startsWith("/station")) {
-        navStationItem.after(navArrowItem);
+        blogButton.classList.add("border-left");
+    } else if (pathname.startsWith("/blog")) {
+        navBlogItem.after(navArrowItem);
         playgroundButton.classList.remove("border-left");
         galleryButton.classList.remove("border-left");
-        stationButton.classList.remove("border-right");
+        blogButton.classList.remove("border-right");
     } else if (!isHome) {
         navArrowItem.remove();
         playgroundButton.classList.remove("border-left");
