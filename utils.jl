@@ -19,6 +19,7 @@ end
 
 const IMAGE_PATTERN = r"!\[([^\]]*)\]\(([^\s\)]+)(?:\s+[\"']([^\"']*)[\"'])?\)"
 const HEADER_PATTERN = r"^(\#{1,6})\s+(.+?)(?:\s*\#*)?$"m
+const CODE_BLOCK_PATTERN = r"```[\s\S]*?```"m
 
 function replace_image(string)
     result = match(IMAGE_PATTERN, string)
@@ -76,6 +77,33 @@ function replace_hard_coded(string)
     return markdown
 end
 
+function process_markdown(string)
+    segments = []
+    last_pos = 1
+    for m in eachmatch(CODE_BLOCK_PATTERN, string)
+        if m.offset > last_pos
+            push!(segments, (:text, string[last_pos:m.offset-1]))
+        end
+        push!(segments, (:code, m.match))
+        last_pos = m.offset + length(m.match)
+    end
+    if last_pos < length(string)
+        push!(segments, (:text, string[last_pos:end]))
+    end
+
+    processed_segments = []
+    for (type, segment) in segments
+        if type == :text
+            segment = replace_hard_coded(segment)
+            segment = replace(segment, IMAGE_PATTERN => replace_image)
+            segment = replace(segment, HEADER_PATTERN => replace_header)
+        end
+        push!(processed_segments, segment)
+    end
+
+    return join(processed_segments, "")
+end
+
 function lx_fetch(com, _)
     content = Franklin.content(com.braces[1])
 
@@ -85,9 +113,7 @@ function lx_fetch(com, _)
     r = HTTP.request("GET", link)
     if r.status == 200
         markdown = """$(String(r.body))"""
-        markdown = replace_hard_coded(markdown)
-        markdown = replace(markdown, IMAGE_PATTERN => replace_image)
-        markdown = replace(markdown, HEADER_PATTERN => replace_header)
+        markdown = process_markdown(markdown)
         return """$markdown"""
     else
         return """404"""
