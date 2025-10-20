@@ -23,8 +23,8 @@ Created summer of 2025, this scene uses the [The Crow](https://lospec.com/palett
 
 \header{Emoji Set}{emoji-set}
 
-\largeEmoji{css3} \largeEmoji{godot} \largeEmoji{html5} \largeEmoji{javascript} \largeEmoji{julia} \largeEmoji{python} \largeEmoji{rust} \largeEmoji{typescript} \largeEmoji{java} \largeEmoji{lua}\
-\largeEmoji{discord} \largeEmoji{github} \largeEmoji{itchio} \largeEmoji{youtube} \largeEmoji{spotify}
-\largeEmoji{folder} \largeEmoji{paperclip} \largeEmoji{clock} \largeEmoji{cartridge}
+\largeEmoji{css3} \largeEmoji{godot} \largeEmoji{html5} \largeEmoji{javascript} \largeEmoji{julia} \largeEmoji{python} \largeEmoji{rust} \largeEmoji{rust_orange} \largeEmoji{typescript} \largeEmoji{java} \largeEmoji{lua}\
+\largeEmoji{discord} \largeEmoji{github} \largeEmoji{itchio} \largeEmoji{youtube} \largeEmoji{spotify}\
+\largeEmoji{folder} \largeEmoji{paperclip} \largeEmoji{clock} \largeEmoji{cartridge} \largeEmoji{document} \largeEmoji{pencil} \largeEmoji{wrench} \largeEmoji{magnifying_glass} \largeEmoji{version_control}
 
 A continuously growing set of emojis! Currently most are related to technology and programming, but a larger scope of emojis may be added. All emojis use the [Duel](https://lospec.com/palette-list/duel) color palette.
