@@ -36,3 +36,5 @@ Add here global latex commands to use throughout your pages.
 \newcommand{\header}[2]{\label{!#2} ~~~<div class="banner"><a href="#!#2"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">!#1</spf-text></a></div>~~~}
 
 \newcommand{\pixelImage}[1]{~~~<img style="max-width: 100%; padding-left: 0; image-rendering: pixelated;" src="#1" alt="#1">~~~}
+
+\newcommand{\playgroundCommentWidget}[0]{~~~<script src="https://utteranc.es/client.js" repo="The-Nice-One/PlaygroundProjects" issue-term="title" theme="github-light" crossorigin="anonymous" async></script>~~~}
