@@ -37,4 +37,34 @@ Add here global latex commands to use throughout your pages.
 
 \newcommand{\pixelImage}[1]{~~~<img style="max-width: 100%; padding-left: 0; image-rendering: pixelated;" src="#1" alt="#1">~~~}
 
-\newcommand{\playgroundCommentWidget}[0]{~~~<script src="https://utteranc.es/client.js" repo="The-Nice-One/PlaygroundProjects" issue-term="title" theme="github-light" crossorigin="anonymous" async></script>~~~}
+\newcommand{\playgroundCommentWidget}[0]{~~~<script src="https://giscus.app/client.js" 
+    data-repo="The-Nice-One/PlaygroundProjects"
+    data-repo-id="R_kgDOPUc1tg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOPUc1ts4CxMF0"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async>
+</script>~~~}
+
+\newcommand{\blogCommentWidget}[0]{~~~<script src="https://giscus.app/client.js"
+    data-repo="The-Nice-One/BlogPosts"
+    data-repo-id="R_kgDOPv3oyQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOPv3oyc4CxMGA"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async>
+</script>~~~}
