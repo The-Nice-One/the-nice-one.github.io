@@ -1,4 +1,34 @@
 <script>
+    var socials = [
+        {
+            name: "The-Nice-One",
+            link: "https://github.com/The-Nice-One",
+            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis/github.png"
+        },
+        {
+            name: "Nice One",
+            link: "https://nice-one.itch.io/",
+            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis/itchio.png"
+        },
+        {
+            name: "Nice One",
+            link: "https://www.youtube.com/@niceone6647", 
+            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis/youtube.png"
+        },
+        {
+            name: "the_nice_one.",
+            link: "#",
+            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis/discord.png"
+        }
+    ];
+    var currentSocialIndex = 0;
+    function cycleSocialMedia(button) {
+        currentSocialIndex = (currentSocialIndex + 1) % socials.length;
+        document.getElementById("social-name").innerText = socials[currentSocialIndex].name;
+        document.getElementById("social-name").href = socials[currentSocialIndex].link;
+        document.getElementById("social-icon").src = socials[currentSocialIndex].icon;
+    }
+
     var primaryColor = [64, 151, 234, 255];
     var secondaryColor = [20, 118, 192, 255];
 

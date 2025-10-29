@@ -84,6 +84,35 @@ header {
     border-radius: 50%;
 }
 
+#social-name {
+    align-self: center;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+#social-icon {
+  width: 1rem;
+  height: 1rem;
+  align-self: center;
+  image-rendering: pixelated;
+  margin-left: 4px;
+}
+
+#social-name:hover {
+    color: var(--link-primary);
+}
+
+#social-next-button {
+  color: var(--text-primary);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#social-next-button:hover {
+  color: var(--link-primary);
+}
+
 input[type="text"] {
     border: none;
     border-bottom: 1px solid transparent;
