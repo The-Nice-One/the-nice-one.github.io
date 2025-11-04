@@ -13,7 +13,7 @@ Some of my artwork created throughout the years. In particular pixel-art which I
 
 \pixelImage{https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/avatar/midnight.png}
 
-Created November 9th, 2022, this image became my longest lasting avatar on Github. It pictures a tree posistioned to the right, on a midnight sky.
+Created November 9th, 2022, this image became my avatar on Github. It pictures a tree posistioned to the right, on a midnight sky.
 
 \header{Sunset}{sunset}
 

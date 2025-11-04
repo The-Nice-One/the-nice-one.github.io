@@ -217,12 +217,12 @@ td {
 }
 
 .franklin-content a {
-    color: #cd5e46/*#1476c0*/;
+    color: /*#cd5e46*/#1476c0;
     text-decoration: none;
 }
 
 .franklin-content a:visited {
-    color: #7c4b47/*#584a7f*/;
+    color: /*#7c4b47*/#584a7f;
     text-decoration: none;
 }
 

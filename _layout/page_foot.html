@@ -29,8 +29,8 @@
         document.getElementById("social-icon").src = socials[currentSocialIndex].icon;
     }
 
-    var primaryColor = [227, 120, 64, 255];//[64, 151, 234, 255];
-    var secondaryColor = [205, 94, 70, 255];//[20, 118, 192, 255];
+    var primaryColor = /*[227, 120, 64, 255];*/[64, 151, 234, 255];
+    var secondaryColor = /*[205, 94, 70, 255];*/[20, 118, 192, 255];
 
     function pixel_process(pixel) {
         if (
@@ -87,12 +87,14 @@
     const navPlaygroundItem = document.getElementById("nav-playground-item");
     const navGalleryItem = document.getElementById("nav-gallery-item");
     const navBlogItem = document.getElementById("nav-blog-item");
+    const navStudioItem = document.getElementById("nav-studio-item");
     const navArrowItem = document.getElementById("nav-arrow-item");
 
     const homeButton = document.getElementById("home-button");
     const playgroundButton = document.getElementById("playground-button");
     const galleryButton = document.getElementById("gallery-button");
     const blogButton = document.getElementById("blog-button");
+    const studioButton = document.getElementById("studio-button");
     if (pathname.startsWith("/playground")) {
         navPlaygroundItem.after(navArrowItem);
         playgroundButton.classList.remove("border-left");
@@ -100,13 +102,15 @@
     } else if (pathname.startsWith("/gallery")) {
         navGalleryItem.after(navArrowItem);
         playgroundButton.classList.remove("border-left");
-        galleryButton.classList.remove("border-left");
         blogButton.classList.add("border-left");
     } else if (pathname.startsWith("/blog")) {
         navBlogItem.after(navArrowItem);
         playgroundButton.classList.remove("border-left");
-        galleryButton.classList.remove("border-left");
-        blogButton.classList.remove("border-right");
+        studioButton.classList.add("border-left");
+    } else if (pathname.startsWith("/studio")) {
+        navStudioItem.after(navArrowItem);
+        playgroundButton.classList.remove("border-left");
+        studioButton.classList.remove("border-right");
     } else if (!isHome) {
         navArrowItem.remove();
         playgroundButton.classList.remove("border-left");

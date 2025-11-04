@@ -2,9 +2,9 @@
     --bg-secondary: #ececec;
     --bg-tertiary: #ebf0f6;
     --text-primary: #000000;
-    --text-secondary: #662b29/*#001b40*/;
-    --link-primary: #cd5e46/*#1476c0*/;
-    --link-tertiary: #662b29/*#001b40*/;
+    --text-secondary: /*#662b29*/#001b40;
+    --link-primary: /*#cd5e46*/#1476c0;
+    --link-tertiary: /*#662b29*/#001b40;
     --accent-color: #7a7a7a;
     --hr-color: #dddddd;
     --input-bg: #ffffff;
