@@ -3,7 +3,7 @@ title = "Studio"
 tags = ["studio", "streams", "videos"]
 +++
 
-\header{Studio}{studio}
+\header{Studio Videos}{studio-videos}
 
 **\emoji{youtube} View on YouTube:** [https://www.youtube.com/@niceone6647](https://www.youtube.com/@niceone6647) 
 

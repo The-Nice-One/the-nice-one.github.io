@@ -1,6 +1,7 @@
 const IMAGE_PATTERN = r"!\[([^\]]*)\]\(([^\s\)]+)(?:\s+[\"']([^\"']*)[\"'])?\)"
 const HEADER_PATTERN = r"^(\#{1,6})\s+(.+?)(?:\s*\#*)?$"m
 const CODE_BLOCK_PATTERN = r"```[\s\S]*?```"m
+OPEN_WORKS_CITED_DIV = false
 
 function replace_image(string)
     result = match(IMAGE_PATTERN, string)
@@ -16,7 +17,14 @@ function replace_image(string)
 end
 
 function replace_header(string)
+    global OPEN_WORKS_CITED_DIV
     result = match(HEADER_PATTERN, string)
+
+    works_cited_pretext = ""
+    if OPEN_WORKS_CITED_DIV
+        OPEN_WORKS_CITED_DIV = false
+        works_cited_pretext = "@@\n"
+    end
 
     header_level = length(result.captures[1])
     header_text = result.captures[2]
@@ -28,7 +36,13 @@ function replace_header(string)
     anchor_text = replace(anchor_text, "'" => "")
     anchor_text = replace(anchor_text, "&" => "")
 
-    return "\\header{$header_text}{$anchor_text}"
+    works_cited_posttext = ""
+    if header_text == "Works Cited"
+        OPEN_WORKS_CITED_DIV = true
+        works_cited_posttext = "\n@@box-works-cited"
+    end
+
+    return "$works_cited_pretext\\header{$header_text}{$anchor_text}$works_cited_posttext"
 end
 
 function lx_banner(com, _)
@@ -59,6 +73,8 @@ function replace_hard_coded(string)
 end
 
 function process_markdown(string)
+    global OPEN_WORKS_CITED_DIV
+
     code_blocks = []
     templated_markdown = string
 
@@ -76,7 +92,7 @@ function process_markdown(string)
         else
             push!(code_blocks, (placeholder, m.match))
         end
-        
+
 
         templated_markdown = replace(templated_markdown, m.match => placeholder)
         counter += 1
@@ -85,6 +101,10 @@ function process_markdown(string)
     templated_markdown = replace_hard_coded(templated_markdown)
     templated_markdown = replace(templated_markdown, IMAGE_PATTERN => replace_image)
     templated_markdown = replace(templated_markdown, HEADER_PATTERN => replace_header)
+    if OPEN_WORKS_CITED_DIV
+        OPEN_WORKS_CITED_DIV = false
+        templated_markdown *= "\n@@"
+    end
 
     markdown = templated_markdown
     for (placeholder, code_block) in code_blocks

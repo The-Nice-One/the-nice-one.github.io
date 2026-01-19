@@ -3,7 +3,7 @@ title = "Gallery"
 tags = ["gallery", "artwork"]
 +++
 
-\header{Gallery}{gallery}
+\header{Gallery Artwork}{gallery-artwork}
 
 **\emoji{github} View on Github:** [https://github.com/The-Nice-One/GalleryArt](https://github.com/The-Nice-One/GalleryArt)
 
