@@ -3,34 +3,37 @@
         {
             name: "The-Nice-One",
             link: "https://github.com/The-Nice-One",
-            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis/github.png"
+            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/github.png",
         },
         {
             name: "Nice One",
             link: "https://nice-one.itch.io/",
-            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis/itchio.png"
+            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/itchio.png",
         },
         {
             name: "Nice One",
-            link: "https://www.youtube.com/@niceone6647", 
-            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis/youtube.png"
+            link: "https://www.youtube.com/@niceone6647",
+            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/youtube.png",
         },
         {
             name: "the_nice_one.",
             link: "#",
-            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis/discord.png"
-        }
+            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/discord.png",
+        },
     ];
     var currentSocialIndex = 0;
     function cycleSocialMedia(button) {
         currentSocialIndex = (currentSocialIndex + 1) % socials.length;
-        document.getElementById("social-name").innerText = socials[currentSocialIndex].name;
-        document.getElementById("social-name").href = socials[currentSocialIndex].link;
-        document.getElementById("social-icon").src = socials[currentSocialIndex].icon;
+        document.getElementById("social-name").innerText =
+            socials[currentSocialIndex].name;
+        document.getElementById("social-name").href =
+            socials[currentSocialIndex].link;
+        document.getElementById("social-icon").src =
+            socials[currentSocialIndex].icon;
     }
 
-    var primaryColor = /*[227, 120, 64, 255];*/[64, 151, 234, 255];
-    var secondaryColor = /*[205, 94, 70, 255];*/[20, 118, 192, 255];
+    var primaryColor = /*[227, 120, 64, 255];*/ [64, 151, 234, 255];
+    var secondaryColor = /*[205, 94, 70, 255];*/ [20, 118, 192, 255];
 
     function pixel_process(pixel) {
         if (

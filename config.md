@@ -16,10 +16,10 @@ mintoclevel = 2
 ignore = ["node_modules/"]
 
 # RSS (the website_{title, descr, url} must be defined to get RSS)
-generate_rss = false
+generate_rss = true
 website_title = "The-Nice-One"
-website_descr = "Example website using Franklin"
-website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
+website_descr = "Hello! My name is Alexis, and I'm an aspiring young developer looking to spread the joy of pixel art to the entire world. "
+website_url   = "https://the-nice-one.is-a.dev/"
 +++
 
 <!--
@@ -29,8 +29,8 @@ Add here global latex commands to use throughout your pages.
 \newcommand{\scal}[1]{\langle #1 \rangle}
 
 \newcommand{\linkedEmoji}[1]{~~~<img style="max-width: 1rem; padding-left: 0; image-rendering: pixelated;" src="#1" alt="#1">~~~}
-\newcommand{\emoji}[1]{~~~<img style="max-width: 1rem; padding-left: 0; image-rendering: pixelated;" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis/!#1.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis/!#1.png">~~~}
-\newcommand{\largeEmoji}[1]{~~~<img style="max-width: 2rem; padding-left: 0; image-rendering: pixelated;" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis/!#1.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis/!#1.png">~~~}
+\newcommand{\emoji}[1]{~~~<img style="max-width: 1rem; padding-left: 0; image-rendering: pixelated;" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/!#1.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/!#1.png">~~~}
+\newcommand{\largeEmoji}[1]{~~~<img style="max-width: 2rem; padding-left: 0; image-rendering: pixelated;" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/!#1.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/!#1.png">~~~}
 
 \newcommand{\iconHeader}[3]{\label{!#3} ~~~<div class="banner"><a href="#!#3"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="#1" alt="#1"><spf-text class="spf-process-blue">!#2</spf-text></a></div>~~~}
 \newcommand{\header}[2]{\label{!#2} ~~~<div class="banner"><a href="#!#2"><img class="anchor-icon" style="max-width: 3rem; padding-left: 0; image-rendering: pixelated; margin-right:0.2rem" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/icons/link.png"><spf-text class="spf-process-blue">!#1</spf-text></a></div>~~~}
