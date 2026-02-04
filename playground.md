@@ -11,7 +11,7 @@ Here you can find a list of my programming projects created for a variety of pur
 
 \header{Applications}{applications}
 
-**\emoji{rust} Retro Player:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Applications/RetroPlayer)\
+**\emoji{rust_orange} Retro Player:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Applications/RetroPlayer)\
 A TUI audio playing application made in Rust. [Read more.](/playground/retro-player/index.html)
 
 \header{Discord Bots}{discord-bots}
@@ -24,7 +24,7 @@ A simple discord bot bringing a point system to your server. [Read more.](/playg
 **\emoji{python} Sir, do you want water? (Console Game):** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Games/ConsoleGame)\
 A simple Python text based game in which you buy water... nothing more. [Read more.](/playground/console-game/index.html)
 
-**\emoji{rust} Castle of the Dice (GMTK2022):** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Games/GMTK2022)\
+**\emoji{rust_orange} Castle of the Dice (GMTK2022):** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Games/GMTK2022)\
 A 2D tile-based shooter game made with Rust and [Emerald](https://crates.io/crates/emerald). [Read more.](/playground/gmtk2022/index.html)
 
 **\emoji{lua} Loop Blaster:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Games/LoopBlaster)\
@@ -35,7 +35,7 @@ A maze game with multiple control methods created in the Godot game engine. [Rea
 
 \header{Libraries}{libraries}
 
-**\emoji{rust} Retro Engine:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Libraries/RetroEngine)\
+**\emoji{rust_orange} Retro Engine:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Libraries/RetroEngine)\
 A simple Rust Terminal User Interface (TUI) library with an expansive component system and complete control over logic and style. [Read more.](/playground/retro-engine/index.html)
 
 **\emoji{julia} SimpleFrameAnimation.jl:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Libraries/SimpleFrameAnimation)\
