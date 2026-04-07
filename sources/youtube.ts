@@ -9,7 +9,7 @@ interface VideoInfo {
   url: string;
 }
 
-async function getRecentVideos(
+export async function getRecentVideos(
   channelId: string,
   maxResults: number = 10,
 ): Promise<VideoInfo[]> {
@@ -102,7 +102,7 @@ function formatDateReadable(
   return `${monthAbbrev}. ${dayStr}, ${dt.getFullYear()}`;
 }
 
-function processVideos(videos: VideoInfo[]): string {
+export function processVideos(videos: VideoInfo[]): string {
   let videoMarkdown = "";
   for (const video of videos) {
     const date = formatDateReadable(video.published_at, true);
