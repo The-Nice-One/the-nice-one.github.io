@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import { processMarkdown } from "./patch.ts";
+import { getRecentVideos, processVideos } from "./youtube.ts";
 
 dotenv.config();
 
