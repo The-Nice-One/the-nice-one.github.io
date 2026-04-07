@@ -1,0 +1,146 @@
+<script>
+    var socials = [
+        {
+            name: "The-Nice-One",
+            link: "https://github.com/The-Nice-One",
+            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/github.png",
+        },
+        {
+            name: "Nice One",
+            link: "https://nice-one.itch.io/",
+            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/itchio.png",
+        },
+        {
+            name: "Nice One",
+            link: "https://www.youtube.com/@niceone6647",
+            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/youtube.png",
+        },
+        {
+            name: "the_nice_one.",
+            link: "#",
+            icon: "https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/discord.png",
+        },
+    ];
+    var currentSocialIndex = 0;
+    function cycleSocialMedia(button) {
+        currentSocialIndex = (currentSocialIndex + 1) % socials.length;
+        document.getElementById("social-name").innerText =
+            socials[currentSocialIndex].name;
+        document.getElementById("social-name").href =
+            socials[currentSocialIndex].link;
+        document.getElementById("social-icon").src =
+            socials[currentSocialIndex].icon;
+    }
+
+    var primaryColor = /*[227, 120, 64, 255];*/ [64, 151, 234, 255];
+    var secondaryColor = /*[205, 94, 70, 255];*/ [20, 118, 192, 255];
+
+    function pixel_process(pixel) {
+        if (
+            pixel[3] == 255 &&
+            pixel[0] > 245 &&
+            pixel[1] > 245 &&
+            pixel[2] > 245
+        ) {
+            pixel = primaryColor;
+        } else if (pixel[3] == 255) {
+            pixel = secondaryColor;
+        }
+        return pixel;
+    }
+
+    let isHome = false;
+    const subNav = document.getElementsByClassName("sub-nav")[0];
+    let spfTexts = document.getElementsByClassName("spf-process-blue");
+    for (let i = 0; i < spfTexts.length; i++) {
+        spfTexts[i].ondraw = pixel_process;
+
+        let ahref = document.createElement("a");
+        ahref.href = spfTexts[i].parentElement.href;
+        ahref.style.textDecoration = "none";
+
+        let button = document.createElement("button");
+        button.innerText = spfTexts[i].innerText;
+        if (i == spfTexts.length - 1) {
+            button.classList.add("border-right");
+        } else {
+            button.classList.add("border-bottom");
+        }
+        button.classList.add("sub-nav-button");
+
+        ahref.appendChild(button);
+        subNav.appendChild(ahref);
+        if (spfTexts[i].innerText == "About Me") {
+            isHome = true;
+        }
+    }
+
+    let anchorIcons = document.getElementsByClassName("anchor-icon");
+    for (let i = 0; i < anchorIcons.length; i++) {
+        const icon = anchorIcons[i];
+        icon.addEventListener("click", function () {
+            this.classList.toggle("clicked");
+        });
+    }
+
+    const pathname = window.location.pathname;
+    const navigationBar = document.getElementById("navigation-bar");
+
+    const navHomeItem = document.getElementById("nav-home-item");
+    const navPlaygroundItem = document.getElementById("nav-playground-item");
+    const navGalleryItem = document.getElementById("nav-gallery-item");
+    const navBlogItem = document.getElementById("nav-blog-item");
+    const navStudioItem = document.getElementById("nav-studio-item");
+    const navArrowItem = document.getElementById("nav-arrow-item");
+
+    const homeButton = document.getElementById("home-button");
+    const playgroundButton = document.getElementById("playground-button");
+    const galleryButton = document.getElementById("gallery-button");
+    const blogButton = document.getElementById("blog-button");
+    const studioButton = document.getElementById("studio-button");
+    if (pathname.startsWith("/playground")) {
+        navPlaygroundItem.after(navArrowItem);
+        playgroundButton.classList.remove("border-left");
+        galleryButton.classList.add("border-left");
+    } else if (pathname.startsWith("/gallery")) {
+        navGalleryItem.after(navArrowItem);
+        playgroundButton.classList.remove("border-left");
+        blogButton.classList.add("border-left");
+    } else if (pathname.startsWith("/blog")) {
+        navBlogItem.after(navArrowItem);
+        playgroundButton.classList.remove("border-left");
+        studioButton.classList.add("border-left");
+    } else if (pathname.startsWith("/studio")) {
+        navStudioItem.after(navArrowItem);
+        playgroundButton.classList.remove("border-left");
+        studioButton.classList.remove("border-right");
+    } else if (!isHome) {
+        navArrowItem.remove();
+        playgroundButton.classList.remove("border-left");
+        galleryButton.classList.remove("border-left");
+    }
+
+    function toggleSubNav(button) {
+        const arrow = document.getElementsByClassName("arrow")[0];
+        const navItem = button.parentElement;
+        const nav = navItem.parentElement;
+        const isExpanded = navItem.classList.contains("expanded");
+
+        navItem.classList.toggle("expanded");
+        button.classList.toggle("border-right");
+
+        if (arrow.textContent == ">") {
+            arrow.textContent = "<";
+        } else {
+            arrow.textContent = ">";
+        }
+    }
+</script>
+<img id="footer-design" src="/public/images/city_background_clean.png" />
+<div class="page-foot">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> <%~ it.site.author %>.
+    Last modified: <%~ it.site.lastModified %> Website built with
+    <a href="https://github.com/The-Nice-One/rail-yard">rail-yard</a> and the
+    <a href="https://www.typescriptlang.org/">TypeScript programming language</a>.
+    See <a href="/credits">credits.</a>
+</div>

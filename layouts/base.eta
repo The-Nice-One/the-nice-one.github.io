@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= it.title ? it.title + ' - ' + it.site.title : it.site.title %></title>
+  <link
+        rel="icon"
+        href="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/avatar/midnight.png"
+    />
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <%~ it.css %>
+    <script src="/public/libraries/clipboard/clipboard.min.js"></script>
+    <link rel="stylesheet" href="/public/libraries/highlight/styles/atom-one-light.min.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="/public/libraries/highlight/styles/atom-one-dark.min.css" media="(prefers-color-scheme: dark)">
+    <script src="/public/libraries/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
+    <script src="/public/libraries/web-spf/web_spf.js" type="module"></script>
+    <link rel="stylesheet" href="/public/libraries/katex/katex.min.css">
+    <script src="/public/libraries/katex/katex.min.js"></script>
+    <script src="/public/libraries/katex/contrib/auto-render.min.js"></script>
+    <script>renderMathInElement(document.body)</script>
+    <spf-font src="/public/fonts/Peaberry.spf" default></spf-font>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    </script>
+    <script src="/pagefind/pagefind-ui.js"></script>
+</head>
+<body>
+  <%~ include('/layouts/header.eta', it) %>
+  <main class="content">
+    <%~ it.content %>
+    <%~ include('/layouts/script.eta', it) %>
+  </main>
+  <%~ include('/layouts/clipboard.eta', it) %>
+</body>
+</html>

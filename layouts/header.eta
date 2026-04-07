@@ -1,0 +1,91 @@
+<header>
+    <div class="aligned-flex">
+        <div class="name-tag">
+            <img
+                src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/avatar/midnight.png"
+                class="avatar"
+            />
+            <a href="https://github.com/The-Nice-One" id="social-name"
+                >The-Nice-One</a
+            >
+            <img
+                id="social-icon"
+                src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/github.png"
+            />
+            <button id="social-next-button" onclick="cycleSocialMedia(this)">
+                <span class="arrow">&gt;</span>
+            </button>
+        </div>
+        <div class="aligned-item-right">
+            <form id="lunrSearchForm" name="lunrSearchForm">
+                <input
+                    class="search-input"
+                    name="q"
+                    placeholder="Enter search term"
+                    type="text"
+                />
+                <input
+                    style="border: none"
+                    class="search-button"
+                    type="submit"
+                    value="Search"
+                    formaction="/search"
+                />
+            </form>
+        </div>
+    </div>
+    <nav class="simple-flex" id="navigation-bar">
+        <div class="nav-item" id="nav-home-item">
+            <a
+                href="/"
+                class="nav-button border-bottom border-left"
+                id="home-button"
+                >Home</a
+            >
+        </div>
+
+        <div class="nav-item" id="nav-arrow-item">
+            <button
+                class="nav-button border-bottom border-right"
+                style="padding-left: 0px"
+                onclick="toggleSubNav(this)"
+            >
+                <span class="arrow">&gt;</span>
+            </button>
+            <div class="sub-nav">
+                <!-- gets filled in by page_foot.html -->
+            </div>
+        </div>
+
+        <div class="nav-item" id="nav-playground-item">
+            <a
+                href="/playground"
+                class="nav-button border-bottom border-left"
+                id="playground-button"
+            >
+                Playground
+            </a>
+        </div>
+        <div class="nav-item" id="nav-gallery-item">
+            <a
+                href="/gallery"
+                class="nav-button border-bottom"
+                id="gallery-button"
+                >Gallery</a
+            >
+        </div>
+        <div class="nav-item" id="nav-blog-item">
+            <a href="/blog" class="nav-button border-bottom" id="blog-button"
+                >Blog</a
+            >
+        </div>
+        <div class="nav-item" id="nav-studio-item">
+            <a
+                href="/studio"
+                class="nav-button border-bottom border-right"
+                id="studio-button"
+                >Studio</a
+            >
+        </div>
+    </nav>
+</header>

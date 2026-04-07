@@ -1,0 +1,793 @@
+/* ==================================================================
+    VARIABLES — light mode
+================================================================== */
+
+:root {
+    /* ── Typography ─────────────────────────────────────────── */
+    --font-body: Helvetica, Arial, sans-serif;
+    --font-ui: Arial, Helvetica, sans-serif;
+    --font-mono: monospace;
+    --font-size: 19px;
+    --font-size-sm: 14px;
+
+    /* ── Backgrounds ────────────────────────────────────────── */
+    --bg-primary: #ffffff;
+    --bg-secondary: #ececec; /* nav scrollbar track, block backgrounds */
+    --bg-tertiary: #ebf0f6; /* copy button hover, subtle tints */
+    --bg-code-block: hsl(0, 0%, 94%); /* inline code + fenced block bg */
+    --bg-code-output: hsl(0, 0%, 98%); /* .code-output */
+    --bg-table-head: #eae9f4; /* table header row */
+    --bg-callout: #eef3f5; /* .colbox-blue background */
+    --bg-input: #ffffff;
+
+    /* ── Text ───────────────────────────────────────────────── */
+    --text-primary: #1a1a1a; /* body text (franklin used hsv 20%) */
+    --text-secondary: #001b40; /* dark navy — sub-nav, secondary labels */
+    --text-muted: #a6a2a0; /* footer, footnotes */
+    --text-accent: var(--text-secondary);
+
+    /* ── Links ──────────────────────────────────────────────── */
+    --link-primary: #1476c0; /* main link color */
+    --link-visited: #584a7f; /* visited links */
+
+    /* ── Borders & accents ──────────────────────────────────── */
+    --border-color: #dddddd; /* hr, header bottom */
+    --border-strong: lightgray; /* table cell borders */
+    --accent-color: #7a7a7a; /* nav borders, scrollbar thumb */
+    --callout-border: #4c9cf1; /* .colbox-blue left border */
+    --blockquote-border: #a8a8a8;
+
+    /* ── Pixel art SPF colors (also update script.eta JS vars!) */
+    --spf-primary-r: 64;
+    --spf-primary-g: 151;
+    --spf-primary-b: 234;
+    --spf-secondary-r: 20;
+    --spf-secondary-g: 118;
+    --spf-secondary-b: 192;
+
+    --pagefind-ui-font: Helvetica, Arial, sans-serif;
+}
+
+/* ==================================================================
+    VARIABLES — dark mode
+================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #222323;
+        --bg-secondary: #434549;
+        --bg-tertiary: #1d1d21;
+        --bg-code-block: #27272a;
+        --bg-code-output: #1f1f22;
+        --bg-table-head: #1e2040;
+        --bg-callout: #1a2535;
+        --bg-input: #222323;
+
+        --text-primary: #ebf0f6;
+        --text-secondary: #55b1f1; /* light blue for dark bg */
+        --text-muted: #71717a;
+        --text-accent: var(--text-secondary);
+
+        --link-primary: #55b1f1;
+        --link-visited: #baabf7;
+
+        --border-color: #3f3f46;
+        --border-strong: #52525b;
+        --accent-color: #52525b;
+        --callout-border: #55b1f1;
+        --blockquote-border: #52525b;
+
+        /* SPF pixel colors in dark mode — warmer/brighter blue */
+        --spf-primary-r: 96;
+        --spf-primary-g: 165;
+        --spf-primary-b: 250;
+        --spf-secondary-r: 59;
+        --spf-secondary-g: 130;
+        --spf-secondary-b: 246;
+
+        --pagefind-ui-primary: #ebf0f6;
+        --pagefind-ui-text: #ebf0f6;
+        --pagefind-ui-background: #222323;
+        --pagefind-ui-border: #222323;
+    }
+}
+
+/* ==================================================================
+    BASE
+================================================================== */
+
+html {
+    font-family: var(--font-body);
+    font-size: var(--font-size);
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+body {
+    counter-reset: eqnum;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==================================================================
+    CONTENT LAYOUT (.content)
+    base.eta uses <main class="content">
+================================================================== */
+
+.content {
+    position: relative;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+    line-height: 1.35em;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+@media (min-width: 940px) {
+    .content {
+        width: 705px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+}
+
+/* ==================================================================
+    GRID HELPERS (profile pic, floats)
+================================================================== */
+
+.content .row {
+    display: block;
+}
+.content .left {
+    float: left;
+    margin-right: 15px;
+}
+.content .right {
+    float: right;
+}
+
+.content .container img {
+    width: auto;
+    padding-left: 0;
+    border-radius: 10px;
+}
+
+.content .footnote {
+    position: relative;
+    top: -0.5em;
+    font-size: 70%;
+}
+
+/* ==================================================================
+    HEADINGS
+================================================================== */
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    text-align: left;
+    color: var(--text-primary);
+}
+
+.content h1 {
+    font-size: 24px;
+}
+.content h2 {
+    font-size: 22px;
+}
+.content h3 {
+    font-size: 20px;
+}
+
+.content h1 {
+    padding-bottom: 0.5em;
+    border-bottom: 3px double var(--border-color);
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+.content h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+/* Heading anchor links inherit text color */
+.content h1 a,
+.content h2 a,
+.content h3 a,
+.content h4 a,
+.content h5 a,
+.content h6 a {
+    color: inherit;
+}
+
+.content h1 a:hover,
+.content h2 a:hover,
+.content h3 a:hover,
+.content h4 a:hover,
+.content h5 a:hover,
+.content h6 a:hover {
+    text-decoration: none;
+}
+
+/* ==================================================================
+    LINKS
+================================================================== */
+
+.content a {
+    color: var(--link-primary);
+    text-decoration: none;
+}
+
+.content a:visited {
+    color: var(--link-visited);
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+/* ==================================================================
+    LISTS
+================================================================== */
+
+.content li p {
+    margin: 10px 0;
+}
+
+.franklin-toc li {
+    margin: 0.6rem 0;
+}
+
+.franklin-toc ol ol {
+    list-style-type: lower-alpha;
+}
+
+/* ==================================================================
+    BLOCKQUOTE
+================================================================== */
+
+.content blockquote {
+    background: var(--bg-code-block);
+    border-left: 7px solid var(--blockquote-border);
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    font-style: italic;
+    color: var(--text-primary);
+}
+
+.content blockquote p {
+    display: inline;
+}
+
+/* ==================================================================
+    TABLES
+    (Merged from both files — .content scoped wins)
+================================================================== */
+
+.content table {
+    line-height: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.content thead tr:first-of-type,
+.content tr:first-of-type {
+    background: var(--bg-table-head);
+}
+
+.content tr:first-of-type > th {
+    text-align: center;
+}
+
+.content th,
+.content td {
+    font-size: var(--font-size-sm);
+    padding: 10px;
+    border: 1px solid var(--border-strong);
+}
+
+.content tbody tr td {
+    border: 1px solid var(--border-strong);
+}
+
+/* SPF pixel font table (used in icon headers) */
+spf-text {
+    height: 3rem;
+}
+
+/* ==================================================================
+    IMAGES
+================================================================== */
+
+.content img {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+/* ==================================================================
+    HORIZONTAL RULE
+================================================================== */
+
+.content hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 1.5em 0;
+}
+
+/* ==================================================================
+    INLINE CODE & CODE BLOCKS
+================================================================== */
+
+code {
+    background-color: var(--bg-code-block);
+    padding: 0.1em 0.2em;
+    border-radius: 2px;
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+}
+
+.hljs {
+    font-size: var(--font-size-sm);
+    line-height: 1.35em;
+    border-radius: 10px;
+}
+
+.hljs-meta {
+    font-weight: bold;
+}
+.hljs-meta.shell_ {
+    color: crimson;
+}
+.hljs-meta.prompt_ {
+    color: rgb(25, 179, 51);
+}
+
+.code-output {
+    background: var(--bg-code-output);
+    border: 1px dashed #dbdbdb;
+}
+
+/* Copy button (positioned inside <pre>) */
+pre {
+    position: relative;
+}
+
+.copy-button {
+    cursor: pointer;
+    border: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 6px 10px 10px;
+    color: var(--link-primary);
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.copy-button:hover,
+.copy-button:focus,
+.copy-button:active {
+    outline: 0;
+    background-color: var(--bg-tertiary);
+}
+
+/* ==================================================================
+    KATEX / MATH
+================================================================== */
+
+.katex {
+    font-size: 1em !important;
+}
+
+.katex-display .katex {
+    display: inline-block;
+    white-space: normal;
+}
+
+.katex-display::after {
+    counter-increment: eqnum;
+    content: "(" counter(eqnum) ")";
+    position: relative;
+    float: right;
+    padding-right: 5px;
+}
+
+.nonumber .katex-display::after {
+    counter-increment: nothing;
+    content: "";
+}
+
+/* ==================================================================
+    HYPERREFS & FOOTNOTES
+================================================================== */
+
+.content .eqref a {
+    color: green;
+}
+.content .bibref a {
+    color: green;
+}
+
+.content sup {
+    font-size: 70%;
+    vertical-align: super;
+    line-height: 0;
+}
+
+.content table.fndef {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.content .fndef tr,
+.content .fndef td {
+    padding: 0;
+    border: 0;
+    text-align: left;
+}
+
+.content .fndef tr {
+    border-left: 2px solid var(--border-strong);
+}
+
+.content .fndef td.fndef-backref {
+    vertical-align: top;
+    font-size: 70%;
+    padding-left: 5px;
+}
+
+.content .fndef td.fndef-content {
+    font-size: 80%;
+    padding-left: 10px;
+    width: 100%;
+}
+
+/* ==================================================================
+    BOXES & CALLOUTS
+================================================================== */
+
+.content .colbox-blue {
+    background-color: var(--bg-callout);
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 0 10px 10px 0;
+    border-left: 5px solid var(--callout-border);
+}
+
+.content .box-double-space {
+    line-height: 2em;
+}
+
+.content .box-works-cited p {
+    text-indent: -1em;
+    padding-left: 1em;
+}
+
+/* ==================================================================
+    PIXEL ART BANNER / ICON HEADERS
+    Used by \iconHeader and \header commands in build.ts
+================================================================== */
+
+.banner {
+    padding-bottom: 0.5em;
+    border-bottom: 3px double var(--border-color);
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+.anchor-icon {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+}
+
+.anchor-icon.clicked {
+    transform: translateY(-0.1rem);
+}
+
+/* ==================================================================
+    FOOTER
+================================================================== */
+
+.page-foot {
+    font-size: 80%;
+    font-family: Arial, serif;
+    color: var(--text-muted);
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 2em;
+    margin-bottom: 4em;
+}
+
+.content .page-foot a {
+    text-decoration: none;
+    color: var(--text-muted);
+    text-decoration: underline;
+}
+
+/* Footer city background image (moved here from inline style in script.eta) */
+#footer-design {
+    padding: 0;
+    width: 100%;
+    bottom: 0;
+    opacity: 0.18;
+    margin-top: 6em;
+}
+
+/* ==================================================================
+    HEADER & NAV
+================================================================== */
+
+.nav-button,
+.sub-nav-button,
+.search-input,
+.search-button {
+    font-family: var(--font-ui);
+}
+
+/* Border utility classes used by nav items */
+.border-bottom {
+    border: none;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.border-left {
+    border: none;
+    border-bottom: 1px solid var(--accent-color);
+    border-bottom-left-radius: 4px;
+}
+
+.border-right {
+    border: none;
+    border-bottom: 1px solid var(--accent-color);
+    border-bottom-right-radius: 4px;
+}
+
+/* Flex layout helpers */
+.aligned-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.simple-flex {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.aligned-item-right {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header container */
+header {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 15px 20px;
+    border-style: none;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0px 2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    max-width: calc(100vw - 40px);
+    background-color: var(--bg-primary);
+}
+
+/* Name / avatar / social row */
+.name-tag {
+    display: flex;
+}
+
+.avatar {
+    align-self: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+
+#social-name {
+    align-self: center;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+#social-icon {
+    width: 1rem;
+    height: 1rem;
+    align-self: center;
+    image-rendering: pixelated;
+    margin-left: 4px;
+}
+
+#social-name:hover {
+    color: var(--link-primary);
+}
+
+#social-next-button {
+    color: var(--text-primary);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#social-next-button:hover {
+    color: var(--link-primary);
+}
+
+/* Search inputs */
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 8px 12px;
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin: 0;
+    outline: none;
+    transition:
+        border-color 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
+}
+
+input[type="submit"] {
+    margin: 0;
+    padding: 8px 12px;
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition:
+        border-color 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
+}
+
+input[type="text"]::placeholder {
+    color: var(--text-secondary);
+}
+input[type="text"]:focus {
+    border-color: var(--link-primary);
+}
+input[type="submit"]:hover {
+    color: var(--link-primary);
+}
+
+/* Nav bar */
+nav {
+    padding-bottom: 16px;
+    overflow-x: scroll;
+}
+
+nav::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+nav::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+}
+nav::-webkit-scrollbar-thumb:hover {
+    background: var(--link-primary);
+}
+
+.nav-item {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+}
+
+.nav-item a {
+    text-decoration: none;
+}
+
+.nav-button {
+    background-color: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--link-primary);
+    padding: 10px 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    justify-content: stretch;
+}
+
+.nav-button:hover {
+    color: var(--text-primary);
+}
+
+.nav-item.expanded .sub-nav {
+    display: flex;
+}
+
+.sub-nav {
+    height: 100%;
+    min-width: max-content;
+    display: none;
+    align-self: flex-end;
+    align-items: flex-end;
+    flex-direction: row;
+    position: relative;
+    justify-content: stretch;
+    flex-shrink: 0;
+}
+
+.sub-nav-button {
+    background-color: transparent;
+    color: var(--link-primary);
+    padding: 8px;
+    cursor: pointer;
+    max-width: 180px;
+    height: auto;
+    display: flex;
+    align-self: stretch;
+    justify-content: stretch;
+    position: relative;
+    font-size: 0.6rem;
+}
+
+.sub-nav-button:hover {
+    color: var(--text-primary);
+}
+
+/* ==================================================================
+    RESPONSIVE
+================================================================== */
+
+@media (max-width: 480px) {
+    header {
+        margin-top: 16px;
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .aligned-flex {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .aligned-item-right {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .search-input {
+        max-width: 180px;
+    }
+}
+
+@media (min-width: 940px) {
+    header {
+        width: 705px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

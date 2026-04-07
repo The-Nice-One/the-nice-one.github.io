@@ -1,5 +1,6 @@
-__site/
-.DS_Store
 node_modules/
-package-lock.json
+dist/
+dist-wiki/
+.DS_Store
+*.js.map
 .env

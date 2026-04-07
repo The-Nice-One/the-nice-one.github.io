@@ -19,42 +19,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # NOTE: Python is necessary for the pre-rendering (minification) step
-      - name: Install python
-        uses: actions/setup-python@v5
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: "3.8"
-      # NOTE: Here you can install dependencies such as matplotlib if you use
-      # packages such as PyPlot.
-      # - run: pip install matplotlib
-      - name: Install Julia
-        uses: julia-actions/setup-julia@v1
-        with:
-          version: "1.11.6" # Latest stable Julia release.
-      # NOTE
-      #   The steps below ensure that NodeJS and Franklin are loaded then it
-      #   installs highlight.js which is needed for the prerendering step
-      #   (code highlighting + katex prerendering).
-      #   Then the environment is activated and instantiated to install all
-      #   Julia packages which may be required to successfully build your site.
-      #   The last line should be `optimize()` though you may want to give it
-      #   specific arguments, see the documentation or ?optimize in the REPL.
-      - name: compile
+          node-version: "20"
+          cache: "npm" # Speeds up future runs by caching node_modules
+      - name: Compile
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           UPDATE_YOUTUBE_WIDGET: "True"
-        run: julia -e '
-          using Pkg; Pkg.activate("."); Pkg.instantiate();
-          using NodeJS; run(`$(npm_cmd()) install highlight.js`);
-          using Franklin;
-          optimize(minify=false); lunr();'
+        run: npm install && npx -y tsx build.ts
       - name: Configure
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: "__site"
+          path: "dist"
   deploy:
     environment:
       name: github-pages

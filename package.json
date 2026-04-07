@@ -1,6 +1,20 @@
 {
+  "name": "my-site",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsx build.ts",
+    "serve": "rail-yard serve",
+    "preprocess": "rail-yard preprocess -i ./docs -o ./wiki"
+  },
   "dependencies": {
-    "cheerio": "=1.0.0",
-    "lunr": "=2.3.9"
+    "dotenv": "^17.4.0",
+    "rail-yard": "github:The-Nice-One/rail-yard"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
   }
 }
