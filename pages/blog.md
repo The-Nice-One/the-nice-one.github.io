@@ -10,7 +10,7 @@ Here you can find my blog posts, which I write from time to time. I plan for mos
 
 \header{Recent Posts}{recent-posts}
 
-**\emoji{clock} [Jan. 16th, 2025] Accessibility of Graphical Realism**: [View on Github](https://github.com/The-Nice-One/BlogPosts/tree/main/AccessibilityOfGraphicalRealism.md)\
+**\emoji{clock} [Jan. 16th, 2026] Accessibility of Graphical Realism**: [View on Github](https://github.com/The-Nice-One/BlogPosts/tree/main/AccessibilityOfGraphicalRealism.md)\
 Improvements in Hardware have Led to Innovations in Graphical Realism: Is it Accessible? [Read more.](/blog/accessibility-of-graphical-realism)
 
 **\emoji{clock} [Sep. 14th, 2025] Enhancing Julia's REPL**: [View on Github](https://github.com/The-Nice-One/BlogPosts/tree/main/Julia/EnhancingJuliasREPL)\
