@@ -24,7 +24,7 @@ Created November 1st, 2025, this avatar portrays the [Midnight](#midnight) scene
 
 \pixelImage{https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/scenes/TrainNightScenePreview.gif}
 
-Created summer of 2025, this scene uses the [The Crow](https://lospec.com/palette-list/the-crow) color palette. It depicts a train traveling through a night sky with a handful of animations giving life to the scene. Additionally, this artwork doubles as a playground project as the frames where generated using Julia. Read more about the project [here](/playground/train-night-scene.html).
+Created summer of 2025, this scene uses the [The Crow](https://lospec.com/palette-list/the-crow) color palette. It depicts a train traveling through a night sky with a handful of animations giving life to the scene. Additionally, this artwork doubles as a playground project as the frames where generated using Julia. Read more about the project [here](/playground/train-night-scene).
 
 \header{Emoji Set}{emoji-set}
 

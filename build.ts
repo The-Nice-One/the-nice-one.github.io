@@ -26,12 +26,12 @@ const site = new Site({
 site.defineCommand(
   "linkedEmoji",
   (link) =>
-    `<img style="max-width: 1rem; padding-left: 0; image-rendering: pixelated; " src="${link}" alt="${link}">\n`,
+    `<img style="max-width: 1rem; padding-left: 0; image-rendering: pixelated; " src="${link}" alt="${link}">`,
 );
 site.defineCommand(
   "emoji",
   (link) =>
-    `<img style="max-width: 1rem; padding-left: 0; image-rendering: pixelated;" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/${link}.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/${link}.png">\n`,
+    `<img style="max-width: 1rem; padding-left: 0; image-rendering: pixelated;" src="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/${link}.png" alt="https://raw.githubusercontent.com/The-Nice-One/GalleryArt/refs/heads/main/emojis_scaled_flattened/${link}.png">`,
 );
 site.defineCommand(
   "largeEmoji",
@@ -72,7 +72,7 @@ site.defineCommand(
     data-reactions-enabled="1"
     data-emit-metadata="0"
     data-input-position="top"
-    data-theme="light"
+    data-theme="preferred_color_scheme"
     data-lang="en"
     crossorigin="anonymous"
     async>
@@ -93,7 +93,7 @@ site.defineCommand(
     data-reactions-enabled="1"
     data-emit-metadata="0"
     data-input-position="top"
-    data-theme="light"
+    data-theme="preferred_color_scheme"
     data-lang="en"
     crossorigin="anonymous"
     async>

@@ -1,5 +1,6 @@
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+import { GOOGLE_API_KEY } from "./commands.ts";
 const GLOBAL_URL_PATTERN = /(https?:\/\/[^\s]+)/g;
+const GLOBAL_TAG_PATTERN = /#(\w+)/g;
 
 interface VideoInfo {
   video_id: string;
@@ -104,13 +105,22 @@ function formatDateReadable(
 
 export function processVideos(videos: VideoInfo[]): string {
   let videoMarkdown = "";
+  let index = 0;
   for (const video of videos) {
     const date = formatDateReadable(video.published_at, true);
     const title = video.title;
     const url = video.url;
     let description = video.description;
-    description.replace(GLOBAL_URL_PATTERN, "[$1]($1)");
-    videoMarkdown += `\\emoji{clock}  **[${date}] ${title}:** [View on Youtube](${url})\\\n${description}\\\n\\\n`;
+    description = description.replace(GLOBAL_URL_PATTERN, "[$1]($1)");
+    description = description.replace(
+      GLOBAL_TAG_PATTERN,
+      "[#$1](https://www.youtube.com/hashtag/$1)",
+    );
+    videoMarkdown += `\\emoji{clock} **[${date}] ${title}:** [View on Youtube](${url})\\\n${description}`;
+    if (index !== videos.length - 1) {
+      videoMarkdown += `\\\n\\\n`;
+    }
+    index += 1;
   }
   return videoMarkdown;
 }

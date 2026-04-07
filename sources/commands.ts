@@ -1,9 +1,10 @@
 import dotenv from "dotenv";
+dotenv.config();
+
 import { processMarkdown } from "./patch.ts";
 import { getRecentVideos, processVideos } from "./youtube.ts";
 
-dotenv.config();
-
+export const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 const UPDATE_YOUTUBE_WIDGET = process.env.UPDATE_YOUTUBE_WIDGET;
 
 export async function fetchMarkdown(body: string) {
