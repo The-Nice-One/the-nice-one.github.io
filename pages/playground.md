@@ -40,6 +40,9 @@ A simple Rust Terminal User Interface (TUI) library with an expansive component 
 **\emoji{julia} SimpleFrameAnimation.jl:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Libraries/SimpleFrameAnimation)\
 A Julia package for managing animations based on frame data. [Read more.](/playground/simple-frame-animation)
 
+**\emoji{javascript} Compose Library:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Libraries/ComposeLibrary)\
+[Code.org](https://code.org) App Lab library to build declarative User Interfaces. [Read more.](/playground/compose-library)
+
 \header{Miscellaneous}{miscellaneous}
 
 **\emoji{javascript} JS REPL Env:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Miscellaneous/JSREPLEnv)\
