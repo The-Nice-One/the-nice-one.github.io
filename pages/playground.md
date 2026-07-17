@@ -13,6 +13,9 @@ Here you can find a list of my programming projects created for a variety of pur
 **\emoji{rust_orange} Retro Player:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Applications/RetroPlayer)\
 A TUI audio playing application made in Rust. [Read more.](/playground/retro-player)
 
+**\emoji{javascript} Vehicle Picker:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/Applications/VehiclePicker)\
+An app that recommends transport vehicles based on trip distance. [Read more.](/playground/vehicle-picker)
+
 \header{Discord Bots}{discord-bots}
 
 **\emoji{python} Reputation Bot:** [View on Github](https://github.com/The-Nice-One/PlaygroundProjects/tree/main/DiscordBots/RepBot)\
